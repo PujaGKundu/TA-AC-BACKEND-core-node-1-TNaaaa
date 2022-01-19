@@ -11,6 +11,7 @@ const parsedUrl = url.parse(
 );
 console.log(parsedUrl);
 ```
+
 - console parsedUrl.pathname
 - console parsedUrl.query
 - console.log parsed Url host and protocol
