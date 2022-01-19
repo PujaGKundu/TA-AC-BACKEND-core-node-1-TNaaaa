@@ -11,7 +11,7 @@ function areaCircle(r) {
 }
 
 module.export = {
-  areaSquare,
-  areaRectangle,
-  areaCircle,
+  areaSquare: areaSquare,
+  areaRectangle: areaRectangle,
+  areaCircle: areaCircle,
 };
