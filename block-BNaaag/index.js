@@ -1,14 +1,13 @@
-let fs = require("fs");
+let { readFile, readFileSync } = require("fs");
 
-fs.readFile("./content.md", "utf-8", (err, file) => {
-  console.log(err, file);
-});
-
-console.time("async code");
-fs.readFile("./content.md", "utf-8", (err, content) => {
+//Async
+readFile("./content.md", "utf-8", (err, content) => {
   console.log(content);
-  console.timeEnd("async code");
 });
+
+//Sync
+var result = readFileSync("./content.md", "utf-8");
+console.log(result);
 
 let buff1 = Buffer.alloc(10);
 console.log(buff1);
