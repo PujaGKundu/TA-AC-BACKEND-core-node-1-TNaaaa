@@ -1,5 +1,5 @@
-var { areaSquare, areaRectangle, areaCircle } = require("./area");
+var area = require("./area");
 
-console.log(areaRectangle(10, 15));
-console.log(areaSquare(40));
-console.log(areaCircle(15));
+console.log(area.areaRectangle(10, 15));
+console.log(area.areaSquare(40));
+console.log(area.areaCircle(15));
