@@ -1,0 +1,135 @@
+.hero-destination{
+  height: 30vh;
+  background: url(../media/Destination/manali/w1.jpg) no-repeat;
+  text-align: center;
+  position: relative;
+  .hero-title{
+    font-size: 64px;
+    color: $white;
+    text-transform: capitalize;
+    line-height: 30vh;
+  }
+}
+
+.info {
+    h2 {
+        font-size: 3rem;
+        text-align: center;
+    }
+    p {
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+    .gallery {
+        max-width: 1530px;
+        margin: 2rem;
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        img {
+            width: 100%;
+            &:hover {
+                border-radius: 1rem;
+                transform: scale(1.02);
+                filter: contrast(1.5);
+            }
+        }
+        @media screen and (min-width: 590px) and (max-width: 976px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media screen and (max-width: 590px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.dalhousie-destination{
+    height: 30vh;
+    background: url(../media/Destination/dalhousie/w1.jpg) no-repeat;
+    text-align: center;
+    position: relative;
+    .hero-title{
+      font-size: 64px;
+      color: $white;
+      text-transform: capitalize;
+      line-height: 30vh;
+    }
+}
+
+.dharamshala-destination{
+    height: 30vh;
+    background: url(../media/Destination/dharamshala/w1.jpg) no-repeat;
+    text-align: center;
+    position: relative;
+    .hero-title{
+      font-size: 64px;
+      color: $white;
+      text-transform: capitalize;
+      line-height: 30vh;
+    }
+}
+
+.kullu-destination{
+    height: 30vh;
+    background: url(../media/Destination/kullu/w1.jpg) no-repeat;
+    text-align: center;
+    position: relative;
+    .hero-title{
+      font-size: 64px;
+      color: $white;
+      text-transform: capitalize;
+      line-height: 30vh;
+    }
+}
+
+.mandi-destination{
+    height: 30vh;
+    background: url(../media/Destination/mandi/w1.jpg) no-repeat;
+    text-align: center;
+    position: relative;
+    .hero-title{
+      font-size: 64px;
+      color: $white;
+      text-transform: capitalize;
+      line-height: 30vh;
+    }
+}
+
+.shimla-destination{
+    height: 30vh;
+    background: url(../media/Destination/shimla/w1.jpg) no-repeat;
+    text-align: center;
+    position: relative;
+    .hero-title{
+      font-size: 64px;
+      color: $white;
+      text-transform: capitalize;
+      line-height: 30vh;
+    }
+}
+
+.solan-destination{
+    height: 30vh;
+    background: url(../media/Destination/solan/w1.jpg) no-repeat;
+    text-align: center;
+    position: relative;
+    .hero-title{
+      font-size: 64px;
+      color: $white;
+      text-transform: capitalize;
+      line-height: 30vh;
+    }
+}
+
+.spitivalley-destination{
+    height: 30vh;
+    background: url(../media/Destination/spitivalley/w1.jpg) no-repeat;
+    text-align: center;
+    position: relative;
+    .hero-title{
+      font-size: 64px;
+      color: $white;
+      text-transform: capitalize;
+      line-height: 30vh;
+    }
+}
