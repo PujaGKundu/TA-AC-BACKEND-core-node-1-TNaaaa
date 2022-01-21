@@ -1,0 +1,265 @@
+$primary: rgb(15, 5, 70);
+$secondary: rgb(66, 11, 155);
+$Dark: rgb(164, 163, 245);
+$Light: #504e4e;
+$white: white;
+$blue:#012D5B;  
+$pink:#FD656B;    
+$light-blue:#F6F9FE;   
+$grey:#627181;    
+$red:#ff3300;       
+$smoky-white:#F8F8F8;
+$light-grey:#F0F0F0;
+$black:black;
+$dark-grey:#E0E0E0	;
+$blue-shadow: #3366ff;
+$ocur: #ffbf00;
+$green: #00b386;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+body {
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rubik", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  max-width: 1530px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.flex {
+  display: flex;
+}
+.between-space {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.item-center {
+  align-items: center;
+}
+.item-top {
+  align-items: flex-start;
+}
+.txtcenter {
+  text-align: center;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.flex-10 {
+  flex: 0 1 10%;
+}
+.flex-20 {
+  flex: 0 1 20%;
+}
+.flex-30 {
+  flex: 0 1 30%;
+  margin: 1rem;
+}
+.flex-40 {
+  flex: 0 1 40%;
+}
+.flex-48 {
+  flex: 0 1 48%;
+}
+.flex-50 {
+  flex: 0 1 50%;
+}
+.flex-60 {
+  flex: 0 1 60%;
+}
+.width-full {
+  width: 100%;
+}
+
+
+/* Header */
+header{
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+#toggle {
+  display: none;
+}
+.bars {
+  display: none;
+}
+.header h3 {
+  color: $primary;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.header h3:hover {
+  font-size: 2rem;
+  transition-delay: 2ms;
+  transform-style: preserve-3d;
+}
+.header li a {
+  color: $secondary;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0 1rem;
+  text-transform: uppercase;
+}
+.header li a:hover {
+  color: $primary;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+.header {
+  background-color: $Dark;
+  padding: 1rem 3rem;
+}
+
+/*Slide Show Image*/
+.mySlides {display: none;}
+.img {vertical-align: middle;}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1530px;
+  position: relative;
+  margin: auto;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: $white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+
+
+
+
+/* Footer */
+footer {
+  position: relative;
+}
+.head {
+  background-color: $Dark;
+  padding: 2rem;
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $black;
+    margin-bottom: 1rem;
+  }
+  .subscribe {
+    background-color: $white;
+    border: 1px solid $pink;
+    width: 80%;
+    border-radius: 1.5rem;
+    padding: 1.3rem;
+  }
+  .btn a {
+    background-color: $primary;
+    color: $white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.5rem;
+  }
+}
+.head a {
+  font-size: 0.8rem;
+  color: $secondary;
+  &:hover {
+    color: $primary;
+  }
+  i {
+    font-size: 1.5rem;
+    padding-right: 1rem;
+  }
+}
+.foot {
+  padding: 1rem 0;
+  position: relative;
+}
+.foot small {
+  font-size: 0.6rem;
+  color: $Light;
+}
+.foot small span {
+  color: $primary;
+}
+.foot small b {
+  font-weight: 600;
+  color: $black;
+}
+.foot .top {
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0.5rem;
+}
+.foot .top a {
+  background-color: $primary;
+  color: $white;
+  padding: 0.5rem 0.8rem;
+}
+.foot .top a:hover {
+  background-color: $secondary;
+}
+  
