@@ -13,6 +13,7 @@ function handleRequest(req, res) {
 
 server.listen(5000);
 */
+
 /*
 function handleRequest(req, res) {
   res.end("My first server in NodeJS");
@@ -20,42 +21,44 @@ function handleRequest(req, res) {
 
 server.listen(5100);
 */
+
 /*
 function handleRequest(req, res) {
-  res.setHeader("Content-Type", "text/plain");
-  res.end("My first server in NodeJS");
+  console.log(req.headers);
+  res.end(req.headers["user-agent"]);
 }
 
 server.listen(5555);
 */
+
 /*
 function handleRequest(req, res) {
   console.log(req.method, req.url);
-  res.statusCode = 201;
-  res.setHeader("Content-Type", "text/plain");
-  res.end("Welcome");
+  res.end(req.method + req.url);
 }
 
 server.listen(5566);
 */
+
 /*
 function handleRequest(req, res) {
-  res.setHeader("Content-Type", "application/json");
+  res.end(JSON.stringify(req.headers));
 }
 
 server.listen(7000, () => {
   console.log("Server listening on port 7000");
 });
 */
+
 /*
 function handleRequest(req, res) {
   res.statusCode = 202;
-  res.setHeader("Content-Type", "text/plain");
-  res.end("Welcome");
+  res.end(JSON.stringify(req.headers));
 }
 
 server.listen(3333);
 */
+
 /*
 function handleRequest(req, res) {
   res.setHeader("Content-Type", "text/html");
@@ -64,6 +67,7 @@ function handleRequest(req, res) {
 
 server.listen(8000);
 */
+
 /*
 function handleRequest(req, res) {
   res.writeHead(205, { "Content-Type": "text/html" });
@@ -72,14 +76,16 @@ function handleRequest(req, res) {
 
 server.listen(8000);
 */
+
 /*
 function handleRequest(req, res) {
   res.setHeader("Content-Type", "application/json");
-  res.end(`{success: true, message: 'Welcome to Nodejs'}`);
+  res.end(JSON.stringify({success: true, message: 'Welcome to Nodejs'}));
 }
 
 server.listen(8888);
 */
+
 /*
 function handleRequest(req, res) {
   if (req.method === "POST" && req.url === "/index") {
@@ -91,6 +97,7 @@ function handleRequest(req, res) {
 
 server.listen(5050);
 */
+
 /*
 function handleRequest(req, res) {
   if (req.method === "GET" && req.url === "/") {
@@ -107,6 +114,7 @@ function handleRequest(req, res) {
 
 server.listen(2345);
 */
+
 /*
 function handleRequest(req, res) {
   if (req.method === "GET" && req.url === "/users") {
@@ -122,12 +130,12 @@ server.listen(2345);
 */
 
 function handleRequest(req, res) {
-  let parsedUrl = url.parse(req.url);
+  let parsedUrl = url.parse(req.url, true);
   let pathname = parsedUrl.pathname;
   console.log(pathname);
   if (req.method === "GET" && pathname === "/users") {
     res.setHeader("Content-Type", "application/json");
-    res.end(parsedUrl);
+    res.end(JSON.stringify(parsedUrl.query));
   }
 }
 
