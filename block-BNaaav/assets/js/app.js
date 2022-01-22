@@ -7,29 +7,53 @@ var server = http.createServer(handleRequest);
 function handleRequest(req, res) {
   let parsedURl = url.parse(req.url);
   let pathname = parsedURl.pathname;
-  console.log(req.method, req.url);
+  let dir = __dirname.split("assets")[0];
+  //Web Pages
   if (req.method === "GET" && pathname === "/") {
-    res.sendFile("index.html");
-    res.end();
+    fs.createReadStream(dir + "./index.html").pipe(res);
   } else if (req.method === "GET" && pathname === "/about") {
-    res.sendFile("about.html");
-    res.end();
+    fs.createReadStream(dir + "./about.html").pipe(res);
   } else if (req.method === "GET" && pathname === "/destination") {
-    res.sendFile("destination.html");
-    res.end();
+    fs.createReadStream(dir + "./destination.html").pipe(res);
   } else if (req.method === "GET" && pathname === "/contact") {
-    res.sendFile("contact.html");
-    res.end();
-  } else {
-    res.writeHead(404, { "Content-Type": "text/html" });
-    res.end("<h2>Page not found</h2>");
+    fs.createReadStream(dir + "./contact.html").pipe(res);
   }
-  if (req.url.split(".").pop() === "css") {
+  //CSS
+  else if (req.method === "GET" && pathname.split(".").pop() === "css") {
     res.setHeader("Content-Type", "text/css");
-    fs.readFile("./assets/stylesheets/" + req.url, (err, content) => {
+    fs.readFile("./assets/stylesheet/" + pathname, (err, content) => {
       if (err) return console.log(err);
       res.end(content);
     });
+  }
+  //JS
+  else if (pathname.split(".").pop() === "js") {
+    res.setHeader("Content-Type", "text/js");
+    fs.readFile("./assets/js/" + pathname, (err, content) => {
+      if (err) return console.log(err);
+      res.end(content);
+    });
+  }
+  //Images
+  else if (
+    req.method === "GET" &&
+    (pathname.split(".").pop().toLowerCase() === "jpg" ||
+      pathname.split(".").pop().toLowerCase() === "jpeg" ||
+      pathname.split(".").pop().toLowerCase() === "png")
+  ) {
+    res.setHeader(
+      "Content-Type",
+      `image/${pathname.split(".").pop().toLowerCase()}`
+    );
+    fs.readFile("./assets/media/" + pathname, (err, content) => {
+      if (err) return console.log(err);
+      res.end(content);
+    });
+  }
+  //Error
+  else {
+    res.writeHead(404, { "Content-Type": "text/html" });
+    res.end("<h2>Page not found</h2>");
   }
 }
 
